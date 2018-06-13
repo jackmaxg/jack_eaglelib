@@ -7,7 +7,7 @@
 <setting keepoldvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="50" unitdist="mil" unit="mil" style="lines" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="yes"/>
@@ -67,6 +67,8 @@
 <layer number="57" name="tCAD" color="7" fill="1" visible="no" active="no"/>
 <layer number="59" name="tCarbon" color="7" fill="1" visible="no" active="no"/>
 <layer number="60" name="bCarbon" color="7" fill="1" visible="no" active="no"/>
+<layer number="88" name="SimResults" color="9" fill="1" visible="yes" active="yes"/>
+<layer number="89" name="SimProbes" color="9" fill="1" visible="yes" active="yes"/>
 <layer number="90" name="Modules" color="5" fill="1" visible="yes" active="yes"/>
 <layer number="91" name="Nets" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="92" name="Busses" color="1" fill="1" visible="yes" active="yes"/>
@@ -91,6 +93,8 @@
 <layer number="111" name="LPC17xx" color="7" fill="1" visible="no" active="yes"/>
 <layer number="112" name="tSilk" color="7" fill="1" visible="no" active="yes"/>
 <layer number="113" name="IDFDebug" color="4" fill="1" visible="no" active="yes"/>
+<layer number="114" name="Badge_Outline" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="115" name="ReferenceISLANDS" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="116" name="Patch_BOT" color="9" fill="4" visible="no" active="yes"/>
 <layer number="118" name="Rect_Pads" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="121" name="_tsilk" color="7" fill="1" visible="no" active="yes"/>
@@ -144,6 +148,8 @@
 <layer number="229" name="229bmp" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="230" name="230bmp" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="231" name="231bmp" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="232" name="Eagle3D_PG2" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="233" name="Eagle3D_PG3" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="248" name="Housing" color="7" fill="1" visible="no" active="yes"/>
 <layer number="249" name="Edge" color="7" fill="1" visible="no" active="yes"/>
 <layer number="250" name="Descript" color="3" fill="1" visible="no" active="no"/>
@@ -699,6 +705,26 @@
 <wire x1="-2.499990625" y1="5.75" x2="2.499990625" y2="5.75" width="0.025" layer="51"/>
 <wire x1="2.499990625" y1="5.75" x2="2.499990625" y2="0.750009375" width="0.025" layer="51"/>
 </package>
+<package name="SCREW_SW_M3_VERT">
+<description>&lt;p&gt;
+A vertical screw switch terminal designed around a WE M3 insert and an M3 buttonhead bolt
+&lt;/p&gt;
+&lt;p&gt;
+http://katalog.we-online.de/em/datasheet/7466003.pdf
+&lt;/p&gt;
+&lt;p&gt;
+https://www.mcmaster.com/#standard-rounded-head-screws/=1d8pbpw
+&lt;/p&gt;</description>
+<hole x="0" y="0" drill="4.2"/>
+<circle x="0" y="0" radius="2.85" width="0.08255" layer="51"/>
+<circle x="0" y="0" radius="1.5" width="0.0396875" layer="51"/>
+<circle x="0" y="0" radius="2.475" width="0.7" layer="1"/>
+<circle x="0" y="0" radius="2.475" width="0.8" layer="29"/>
+<circle x="0" y="0" radius="3.175" width="2" layer="16"/>
+<circle x="0" y="0" radius="3.175" width="2.1" layer="30"/>
+<smd name="BLT" x="-3.81" y="0" dx="0.25" dy="0.25" layer="16" stop="no" thermals="no" cream="no"/>
+<smd name="BLK" x="2.54" y="0" dx="0.25" dy="0.25" layer="1" stop="no" thermals="no" cream="no"/>
+</package>
 </packages>
 <symbols>
 <symbol name="POWER_CONN_1P">
@@ -1182,6 +1208,15 @@ https://www.mouser.com/productdetail/cui/pj-082bh?qs=sGAEpiMZZMtnOp%252bbbqA009l
 </technologies>
 </device>
 <device name="_M3" package="SCREW_SW_M3">
+<connects>
+<connect gate="G$1" pin="BLK" pad="BLK"/>
+<connect gate="G$1" pin="BLT" pad="BLT"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="_M3-V" package="SCREW_SW_M3_VERT">
 <connects>
 <connect gate="G$1" pin="BLK" pad="BLK"/>
 <connect gate="G$1" pin="BLT" pad="BLT"/>
