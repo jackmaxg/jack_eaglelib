@@ -298,7 +298,7 @@
 <wire x1="1.680528125" y1="-5.08" x2="1.680528125" y2="5.08" width="0.127" layer="21"/>
 <wire x1="1.680528125" y1="5.08" x2="-1.689259375" y2="5.08" width="0.127" layer="21"/>
 <circle x="-1.013778125" y="4.382453125" radius="0.3175" width="0.127" layer="21"/>
-<text x="-1.02584375" y="1.9224625" size="0.6096" layer="25" ratio="16" rot="R90" align="center">&gt;NAME</text>
+<text x="-1.74625" y="5.55625" size="0.6096" layer="25" font="vector" ratio="16" align="center-left">&gt;NAME</text>
 <smd name="1" x="-2.79999375" y="4.445" dx="1.75" dy="0.65" layer="1"/>
 <smd name="16" x="2.79999375" y="4.445" dx="1.75" dy="0.65" layer="1"/>
 <smd name="2" x="-2.79999375" y="3.175" dx="1.75" dy="0.65" layer="1"/>
@@ -501,6 +501,22 @@ https://www.mouser.com/ds/2/240/Littelfuse_PolyZen_Standard_PolyZen_Catalog_Data
 <rectangle x1="-1.2" y1="0.85" x2="-0.7" y2="1.5" layer="51"/>
 <smd name="5" x="-0.95" y="1.3751" dx="0.55" dy="1.35" layer="1"/>
 <circle x="-1.65" y="-1" radius="0.1436" width="0.2032" layer="21"/>
+</package>
+<package name="SOIC_8">
+<wire x1="-1.689259375" y1="2.54" x2="-1.689259375" y2="-2.54" width="0.127" layer="21"/>
+<wire x1="-1.689259375" y1="-2.54" x2="1.680528125" y2="-2.54" width="0.127" layer="21"/>
+<wire x1="1.680528125" y1="-2.54" x2="1.680528125" y2="2.54" width="0.127" layer="21"/>
+<wire x1="1.680528125" y1="2.54" x2="-1.689259375" y2="2.54" width="0.127" layer="21"/>
+<circle x="-1.013778125" y="1.842453125" radius="0.3175" width="0.127" layer="21"/>
+<text x="-1.74625" y="3.01625" size="0.6096" layer="25" font="vector" ratio="16" align="center-left">&gt;NAME</text>
+<smd name="1" x="-2.79999375" y="1.905" dx="1.75" dy="0.65" layer="1"/>
+<smd name="8" x="2.79999375" y="1.905" dx="1.75" dy="0.65" layer="1"/>
+<smd name="2" x="-2.79999375" y="0.635" dx="1.75" dy="0.65" layer="1"/>
+<smd name="3" x="-2.79999375" y="-0.635" dx="1.75" dy="0.65" layer="1"/>
+<smd name="4" x="-2.79999375" y="-1.905" dx="1.75" dy="0.65" layer="1"/>
+<smd name="7" x="2.79999375" y="0.635" dx="1.75" dy="0.65" layer="1"/>
+<smd name="6" x="2.79999375" y="-0.635" dx="1.75" dy="0.65" layer="1"/>
+<smd name="5" x="2.79999375" y="-1.905" dx="1.75" dy="0.65" layer="1"/>
 </package>
 </packages>
 <symbols>
@@ -708,6 +724,17 @@ https://www.mouser.com/datasheet/2/302/MMA51xxWR2-1126893.pdf</description>
 <wire x1="2.54" y1="7.62" x2="2.54" y2="6.35" width="0.1524" layer="94"/>
 <text x="-1.524" y="0" size="1.778" layer="95" ratio="16" align="center">&gt;NAME</text>
 <text x="5.08" y="-5.08" size="1.778" layer="95" ratio="16" align="top-left">&gt;VALUE</text>
+</symbol>
+<symbol name="OPAMP_NO_RAILS">
+<description>Generic Op-Amp</description>
+<pin name="OUT" x="15.24" y="0" length="short" rot="R180"/>
+<pin name="IN+" x="-10.16" y="-7.62" length="short"/>
+<pin name="IN-" x="-10.16" y="7.62" length="short"/>
+<wire x1="-7.62" y1="12.7" x2="12.7" y2="0" width="0.254" layer="94"/>
+<wire x1="12.7" y1="0" x2="-7.62" y2="-12.7" width="0.254" layer="94"/>
+<wire x1="-7.62" y1="-12.7" x2="-7.62" y2="12.7" width="0.254" layer="94"/>
+<text x="-1.524" y="0" size="1.778" layer="95" ratio="16" align="center">&gt;NAME</text>
+<text x="2.286" y="-7.112" size="1.778" layer="95" ratio="16" align="top-left">&gt;VALUE</text>
 </symbol>
 </symbols>
 <devicesets>
@@ -1008,6 +1035,32 @@ http://www.mouser.com/ds/2/687/tsr2-datasheet-911338.pdf</description>
 <connect gate="G$1" pin="OUT" pad="1"/>
 <connect gate="G$1" pin="V+" pad="5"/>
 <connect gate="G$1" pin="V-" pad="2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="OPA2356" prefix="U">
+<description>TI Dual 200Mhz Opamp
+
+http://www.ti.com/lit/ds/symlink/opa2356.pdf</description>
+<gates>
+<gate name="_A" symbol="OPAMP" x="-2.54" y="15.24"/>
+<gate name="_B" symbol="OPAMP_NO_RAILS" x="-2.54" y="-15.24"/>
+</gates>
+<devices>
+<device name="" package="SOIC_8">
+<connects>
+<connect gate="_A" pin="IN+" pad="3"/>
+<connect gate="_A" pin="IN-" pad="2"/>
+<connect gate="_A" pin="OUT" pad="1"/>
+<connect gate="_A" pin="V+" pad="8"/>
+<connect gate="_A" pin="V-" pad="4"/>
+<connect gate="_B" pin="IN+" pad="5"/>
+<connect gate="_B" pin="IN-" pad="6"/>
+<connect gate="_B" pin="OUT" pad="7"/>
 </connects>
 <technologies>
 <technology name=""/>
