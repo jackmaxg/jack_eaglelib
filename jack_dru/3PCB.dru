@@ -1,6 +1,6 @@
 description[de] = <b>EAGLE Design Rules</b>\n<p>\nDie Standard-Design-Rules sind so gewählt, dass sie für \ndie meisten Anwendungen passen. Sollte ihre Platine \nbesondere Anforderungen haben, treffen Sie die erforderlichen\nEinstellungen hier und speichern die Design Rules unter \neinem neuen Namen ab.
 description[en] = <b>Design rules for 3PCB</b>\n<p>\nUnknown parameters left as the Eagle Defaults
-layerSetup = (1*16)
+layerSetup = (1+2*15+16)
 mtCopper = 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm
 mtIsolate = 1.5mm 0.15mm 0.2mm 0.15mm 0.2mm 0.15mm 0.2mm 0.15mm 0.2mm 0.15mm 0.2mm 0.15mm 0.2mm 0.15mm 0.2mm
 mdWireWire = 6mil
@@ -18,7 +18,7 @@ mdCopperDimension = 6mil
 mdDrill = 6mil
 mdSmdStop = 0mil
 msWidth = 6mil
-msDrill = 0.3mm
+msDrill = 0.2mm
 msMicroVia = 9.99mm
 msBlindViaRatio = 0.500000
 rvPadTop = 0.250000
