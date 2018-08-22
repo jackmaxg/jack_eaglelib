@@ -904,6 +904,26 @@ Source: www.johnsoncomponents.com .. J502-ND.pdf</description>
 <text x="2.54" y="-1.905" size="0.6096" layer="27" font="vector" ratio="16" align="center">&gt;VALUE</text>
 <rectangle x1="-0.025" y1="-0.5" x2="4.05" y2="0.5" layer="51"/>
 </package>
+<package name="AMPHENOL_112640">
+<description>Board Edge, Edge Launch BNC connector
+
+https://www.amphenolrf.com/media/downloads/7164/C112640.pdf</description>
+<smd name="SIG" x="2.36" y="0" dx="4.72" dy="0.86" layer="1"/>
+<smd name="SH1" x="2.36" y="4.925" dx="4.72" dy="1.35" layer="1" thermals="no"/>
+<smd name="SH2" x="2.36" y="-4.925" dx="4.72" dy="1.35" layer="1" thermals="no"/>
+<smd name="SH3" x="2.36" y="4.475" dx="4.72" dy="1.67" layer="16" thermals="no"/>
+<smd name="SH4" x="2.36" y="-4.475" dx="4.72" dy="1.67" layer="16" thermals="no"/>
+<wire x1="0" y1="5.5" x2="-1.52" y2="5.5" width="0.127" layer="51"/>
+<wire x1="-1.52" y1="5.5" x2="-1.52" y2="4.826" width="0.127" layer="51"/>
+<wire x1="-1.52" y1="4.826" x2="-1.52" y2="-4.826" width="0.127" layer="51"/>
+<wire x1="-1.52" y1="-4.826" x2="-1.52" y2="-5.5" width="0.127" layer="51"/>
+<wire x1="-1.52" y1="-5.5" x2="0" y2="-5.5" width="0.127" layer="51"/>
+<wire x1="0" y1="-5.5" x2="0" y2="5.5" width="0.127" layer="51"/>
+<wire x1="-1.52" y1="4.826" x2="-12.4" y2="4.826" width="0.127" layer="51"/>
+<wire x1="-12.4" y1="4.826" x2="-12.4" y2="-4.826" width="0.127" layer="51"/>
+<wire x1="-12.4" y1="-4.826" x2="-1.52" y2="-4.826" width="0.127" layer="51"/>
+<text x="2.54" y="1.905" size="0.6096" layer="51" font="vector" ratio="16" align="center">&gt;NAME</text>
+</package>
 </packages>
 <symbols>
 <symbol name="POWER_CONN_1P">
@@ -1503,6 +1523,15 @@ https://www.mouser.com/productdetail/cui/pj-082bh?qs=sGAEpiMZZMtnOp%252bbbqA009l
 <device name="-FEMALE-RA-PTH" package="TE-5-1634513-1">
 <connects>
 <connect gate="G$1" pin="1" pad="CENTER"/>
+<connect gate="G$1" pin="GND" pad="SH1 SH2 SH3 SH4"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="-FEMALE-BOARD-EDGE" package="AMPHENOL_112640">
+<connects>
+<connect gate="G$1" pin="1" pad="SIG"/>
 <connect gate="G$1" pin="GND" pad="SH1 SH2 SH3 SH4"/>
 </connects>
 <technologies>
