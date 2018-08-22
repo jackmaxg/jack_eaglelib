@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="9.0.1">
+<eagle version="9.1.2">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -306,6 +306,28 @@ https://www.mouser.com/datasheet/2/414/OP550-552-555-560-565-750-770_10-1133537.
 <text x="-2.2225" y="2.06375" size="0.6096" layer="25" font="vector" ratio="16">&gt;NAME</text>
 <text x="0" y="0" size="0.6096" layer="27" font="vector" ratio="16" rot="R90" align="center">&gt;VALUE</text>
 </package>
+<package name="PG-HSOF-8">
+<wire x1="-4.7625" y1="7.3025" x2="4.7625" y2="7.3025" width="0.127" layer="21"/>
+<wire x1="4.7625" y1="7.3025" x2="4.7625" y2="-3.81" width="0.127" layer="21"/>
+<wire x1="4.7625" y1="-3.81" x2="-4.7625" y2="-3.81" width="0.127" layer="21"/>
+<wire x1="-4.7625" y1="-3.81" x2="-4.7625" y2="7.3025" width="0.127" layer="21"/>
+<smd name="TAB" x="0" y="4" dx="10.1" dy="8" layer="1" thermals="no"/>
+<smd name="1" x="-4.2" y="-3.9" dx="0.8" dy="2.8" layer="1"/>
+<smd name="2345678" x="0.6" y="-3.9" dx="8" dy="2.8" layer="1" thermals="no"/>
+<text x="-4.572" y="-1.27" size="0.6096" layer="25" font="vector" ratio="16" align="center-left">&gt;NAME</text>
+<text x="4.572" y="-1.27" size="0.6096" layer="27" font="vector" ratio="16" align="center-right">&gt;VALUE</text>
+</package>
+<package name="DO-214AC">
+<smd name="A2" x="-1.915" y="0" dx="1.555" dy="1.57" layer="1"/>
+<wire x1="-2.14625" y1="1.34625" x2="2.14625" y2="1.34625" width="0.127" layer="21"/>
+<wire x1="2.14625" y1="-1.34625" x2="-2.14625" y2="-1.34625" width="0.127" layer="21"/>
+<wire x1="-2.14625" y1="-1.34625" x2="-2.14625" y2="1.34625" width="0.127" layer="21"/>
+<wire x1="2.14625" y1="1.34625" x2="2.14625" y2="-1.34625" width="0.127" layer="21"/>
+<text x="-2.2225" y="1.5875" size="0.6096" layer="25" font="vector" ratio="16">&gt;NAME</text>
+<text x="0" y="0" size="0.6096" layer="27" font="vector" ratio="16" rot="R90" align="center">&gt;VALUE</text>
+<smd name="C1" x="1.915" y="0" dx="1.555" dy="1.57" layer="1"/>
+<wire x1="0.79375" y1="1.3" x2="0.79375" y2="-1.3" width="0.127" layer="21"/>
+</package>
 </packages>
 <symbols>
 <symbol name="DIODE">
@@ -605,6 +627,16 @@ https://www.mouser.com/datasheet/2/414/OP550-552-555-560-565-750-770_10-1133537.
 <technology name=""/>
 </technologies>
 </device>
+<device name="_HSOF-8" package="PG-HSOF-8">
+<connects>
+<connect gate="G$1" pin="D" pad="TAB"/>
+<connect gate="G$1" pin="G" pad="1"/>
+<connect gate="G$1" pin="S" pad="2345678"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
 </devices>
 </deviceset>
 <deviceset name="BJT_NPN" prefix="Q" uservalue="yes">
@@ -762,6 +794,56 @@ https://www.mouser.com/productdetail/on-semiconductor-fairchild/mmpq2222a?qs=sGA
 <connects>
 <connect gate="G$1" pin="A1" pad="A"/>
 <connect gate="G$1" pin="A2" pad="C"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="ZENER" prefix="D" uservalue="yes">
+<gates>
+<gate name="G$1" symbol="DIODE-ZENER" x="0" y="0"/>
+</gates>
+<devices>
+<device name="_DO-214AA" package="DO-214AA">
+<connects>
+<connect gate="G$1" pin="A" pad="A"/>
+<connect gate="G$1" pin="C" pad="C"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="_DO-214AC" package="DO-214AC">
+<connects>
+<connect gate="G$1" pin="A" pad="A2"/>
+<connect gate="G$1" pin="C" pad="C1"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="SCHOTTKY" prefix="D" uservalue="yes">
+<gates>
+<gate name="G$1" symbol="SCHOTTKY" x="0" y="0"/>
+</gates>
+<devices>
+<device name="_DO-214AC" package="DO-214AC">
+<connects>
+<connect gate="G$1" pin="A" pad="A2"/>
+<connect gate="G$1" pin="C" pad="C1"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="_DO-214AA" package="DO-214AA">
+<connects>
+<connect gate="G$1" pin="A" pad="A"/>
+<connect gate="G$1" pin="C" pad="C"/>
 </connects>
 <technologies>
 <technology name=""/>
