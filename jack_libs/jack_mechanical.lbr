@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="9.0.1">
+<eagle version="9.1.2">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
 <setting keepoldvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="50" unitdist="mil" unit="mm" style="lines" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mm"/>
+<grid distance="50" unitdist="mil" unit="mm" style="lines" multiple="1" display="no" altdistance="5" altunitdist="mil" altunit="mil"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -172,6 +172,10 @@ http://katalog.we-online.de/em/datasheet/7466003.pdf</description>
 <text x="0" y="2.8575" size="1.27" layer="51" font="vector" ratio="16" align="center">M3</text>
 <circle x="0" y="0" radius="4.445" width="0.127" layer="21"/>
 </package>
+<package name="M2.5_HOLE">
+<description>designed for socket head screws: https://www.mcmaster.com/#92290a060/=1e9w3ip</description>
+<pad name="P" x="0" y="0" drill="2.6" diameter="4.6" thermals="no"/>
+</package>
 </packages>
 <symbols>
 <symbol name="BOLTHOLE_CONDUCTIVE">
@@ -202,6 +206,14 @@ http://katalog.we-online.de/em/datasheet/7466003.pdf</description>
 </gates>
 <devices>
 <device name="_M3" package="M3_HOLE">
+<connects>
+<connect gate="G$1" pin="P" pad="P"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="_M2.5" package="M2.5_HOLE">
 <connects>
 <connect gate="G$1" pin="P" pad="P"/>
 </connects>
